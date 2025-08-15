@@ -35,6 +35,7 @@ To ensure low latency and high throughput in file processing:
 * Lazy parsing for files to process records on the fly without full file load.
 * Parallel processing option available for large datasets.
 * Thread-safe design with synchronisation for shared resources
+* Use of synchronized list, LongAdder and parallel stream processing for faster performance.
 
 ### API Endpoint
 
