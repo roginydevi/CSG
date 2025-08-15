@@ -1,6 +1,6 @@
 ## Requirements
 
-To create an indexing process for a search system. This application will process a file and does the following:
+To create an indexing process for a search system. This application processes a file and does the following:
 - Counts and returns the NUMBER of words (i.e. Strings) that start with "M" or "m"
 - Returns all the words longer than 5 characters
 
