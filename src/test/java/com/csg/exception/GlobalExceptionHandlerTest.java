@@ -34,7 +34,7 @@ class GlobalExceptionHandlerTest {
     void testHandleFileProcessingException() {
         FileProcessingException ex = new FileProcessingException("Custom file error");
 
-        ResponseEntity<Map<String, String>> response = exceptionHandler.handleWordProcessingException(ex);
+        ResponseEntity<Map<String, String>> response = exceptionHandler.handleFileProcessingException(ex);
 
         assertThat(response.getStatusCodeValue()).isEqualTo(400);
         assertThat(response.getBody()).isNotNull();
