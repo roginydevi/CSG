@@ -15,6 +15,7 @@ To create an indexing process for a search system. This application processes a 
 * Spring Exception handling 
 * Spring Profiles for specifying logging
 * Rest Assured Integration Testcase
+* Enabled Actuator for health check
 
 ## Features
 
