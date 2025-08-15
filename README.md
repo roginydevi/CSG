@@ -18,23 +18,23 @@ To create an indexing process for a search system. This application processes a 
 
 ## Features
 
-✅ Consistent JSON response format for both errors and successes
-✅ In-memory processing for speed and scalability
-✅ MultipartFile upload for streaming for large files.
-✅ 83%+ Model Coverage and 93%+ Service Coverage
-✅ Detailed Exception Handling - Handles all exceptions with clean and clear responses
-✅ Structures Error responses -  All exceptions returns consistent JSON error structure
-✅ Code Coverage - Achieved 91% code coverage(HTML report Generated)
+* Consistent JSON response format for both errors and successes
+* In-memory processing for speed and scalability
+* MultipartFile upload for streaming for large files.
+* 83%+ Model Coverage and 93%+ Service Coverage
+* Detailed Exception Handling - Handles all exceptions with clean and clear responses
+* Structures Error responses -  All exceptions returns consistent JSON error structure
+* Code Coverage - Achieved 91% code coverage(HTML report Generated)
 
 ## Performance Optimisation 
 
 To ensure low latency and high throughput in file processing:
 
-✅ In-memory streaming used instead of writing large files to disk.
-✅ Buffered I/O applied to reduce system calls and improve read speed.
-✅ Lazy parsing for files to process records on the fly without full file load.
-✅ Parallel processing option available for large datasets.
-✅ Thread-safe design with synchronisation for shared resources
+* In-memory streaming used instead of writing large files to disk.
+* Buffered I/O applied to reduce system calls and improve read speed.
+* Lazy parsing for files to process records on the fly without full file load.
+* Parallel processing option available for large datasets.
+* Thread-safe design with synchronisation for shared resources
 
 ### API Endpoint
 
