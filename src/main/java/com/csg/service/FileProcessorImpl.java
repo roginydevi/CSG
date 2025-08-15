@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.LongAdder;
 import java.util.stream.Stream;
@@ -42,20 +43,19 @@ public class FileProcessorImpl implements FileProcessor {
         log.info("Starting file processing...");
 
         LongAdder countM = new LongAdder();
-        List<String> longerThanFive = new ArrayList<>();
+        List<String> longerThanFive = Collections.synchronizedList(new ArrayList<>());
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            reader.lines().forEach(line -> {
-                Stream.of(line.split("\\W+"))
-                        .parallel()
-                        .filter(w -> !w.isEmpty())
-                        .forEach(w -> {
-                            if (w.toLowerCase().startsWith("m")) countM.increment();
-                            if (w.length() > 5) synchronized (longerThanFive) {
-                                longerThanFive.add(w);
-                            }
-                        });
-            });
+            reader.lines()
+                    .parallel()
+                    .forEach(line -> {
+                        Stream.of(line.split("\\W+"))
+                                .filter(w -> !w.isEmpty())
+                                .forEach(w -> {
+                                    if (w.toLowerCase().startsWith("m")) countM.increment();
+                                    if (w.length() > 5) longerThanFive.add(w);
+                                });
+                    });
         } catch (IOException e) {
             log.error("Error reading input stream", e);
             throw e;
